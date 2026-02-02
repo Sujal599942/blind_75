@@ -2,6 +2,9 @@
 #include <vector>
 using namespace std;
 
+// Brute Force Approach - O(n²) time complexity
+// For each element at index i, multiply all other elements
+// Time: O(n²), Space: O(1) (excluding output array)
 vector<int> productexceptitself1(vector<int> &arr)
 {
 
@@ -21,6 +24,10 @@ vector<int> productexceptitself1(vector<int> &arr)
     }
     return ans;
 }
+// Optimal Approach using Prefix-Suffix - O(n) time complexity
+// First pass: Calculate prefix products (elements to the left)
+// Second pass: Multiply with suffix products (elements to the right)
+// Time: O(n), Space: O(1) (excluding output array)
 vector<int> productexceptitself2(vector<int> &arr)
 {
     int n = arr.size();
@@ -51,8 +58,8 @@ int main()
     {
         cout << it << " ";
     }
-    cout<< "\n";
-     for (auto it : res2)
+    cout << "\n";
+    for (auto it : res2)
     {
         cout << it << " ";
     }
